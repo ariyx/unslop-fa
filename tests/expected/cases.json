@@ -228,6 +228,34 @@
     "expected_detect": "expected/human-jadi-003.detect.md"
   },
   {
+    "id": "human-vahid-001",
+    "fixture": "fixtures/human/vahid-nasiri-001-ranges.md",
+    "genre": [
+      "technical",
+      "educational"
+    ],
+    "expected_rules": [],
+    "safeguards": [
+      "T01",
+      "T02",
+      "T03",
+      "T04",
+      "T05",
+      "T06"
+    ],
+    "preserve_tokens": [
+      "C# 8.0",
+      "Range",
+      "Index",
+      "Span",
+      "AsSpan",
+      "inclusive",
+      "exclusive"
+    ],
+    "notes": "Human technical false-positive benchmark. Expected findings: none. Repetition, definitions, examples, and signposting are instructional rather than ornamental.",
+    "expected_detect": "expected/human-vahid-001.detect.md"
+  },
+  {
     "id": "mixed-technical-001",
     "fixture": "fixtures/mixed/01-technical.md",
     "genre": [
