@@ -47,6 +47,7 @@ Fail if the editing is broader than the actual problem.
 - Does word order sound natural in Persian rather than translated literally from English?
 - Are unnecessary noun chains and bureaucratic light-verb phrases reduced?
 - Are نیم‌فاصله and punctuation reasonably consistent with the source register?
+- Is repeated em-dash (`—`) punctuation reduced where Persian punctuation would be more natural, without treating the character itself as an authorship signal?
 - Were English technical terms preserved when they are the clearer convention?
 
 ## 6. Genre checks

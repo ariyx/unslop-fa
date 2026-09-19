@@ -78,7 +78,7 @@ Words such as `بنابراین`, `در نهایت`, or `می‌تواند` are 
 
 ## Seed corpus
 
-The first regression corpus includes five AI-generated Persian drafts:
+The first regression corpus includes five long-form AI-generated Persian drafts, plus focused regression fixtures for individual patterns:
 
 - analytical article;
 - technical database comparison;

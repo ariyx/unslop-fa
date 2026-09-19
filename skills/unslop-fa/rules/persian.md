@@ -65,3 +65,18 @@ These rules target patterns that are especially common in generated, translated,
 **Do not flag:** API names, product names, code terms, standard industry vocabulary, or cases where the English form is the clearer convention.
 
 **Rewrite:** Prefer the natural term for the intended audience. Do not Persianize code or identifiers.
+
+## P09 — Em dash overuse
+
+**Detect:** Repeated use of the em dash (`—`) as a default separator for parenthetical remarks, contrast, explanation, or dramatic pauses, especially where Persian punctuation would read more naturally.
+
+**Do not flag:** A single intentional em dash, literary dialogue, quoted material, or a writer whose established style uses it deliberately. The character itself is not evidence of AI authorship.
+
+**Rewrite:** Replace only unnecessary uses with punctuation that fits the sentence: comma (`،`), colon (`:`), parentheses, or a sentence break. Keep the em dash when it carries a deliberate rhetorical function better than the alternatives.
+
+**Examples:**
+
+- Artificially repeated: `این ابزار — برخلاف تصور رایج — همیشه سرعت کار را بیشتر نمی‌کند.`
+- More natural: `این ابزار، برخلاف تصور رایج، همیشه سرعت کار را بیشتر نمی‌کند.`
+- Artificially explanatory: `یک مشکل وجود دارد — تیم هنوز نیاز واقعی مشتری را نمی‌داند.`
+- More natural: `یک مشکل وجود دارد: تیم هنوز نیاز واقعی مشتری را نمی‌داند.`
