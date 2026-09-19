@@ -302,5 +302,117 @@
     "notes": "Mixed case: keep the concrete debugging story and corrective action; remove only social-post scaffolding.",
     "expected_detect": "expected/mixed-social-001.detect.md",
     "expected_edit": "expected/mixed-social-001.edit.md"
+  },
+  {
+    "id": "human-armin-001",
+    "fixture": "fixtures/human/armin-001-nuxt.md",
+    "genre": [
+      "technical",
+      "social"
+    ],
+    "expected_rules": [],
+    "safeguards": [
+      "T02"
+    ],
+    "preserve_tokens": [
+      "Nuxt",
+      "UnJS",
+      "کوچیک‌ترین چیز‌ها"
+    ],
+    "notes": "Contributor-provided human benchmark. Expected findings: none. Preserve compressed technical commentary and colloquial phrasing.",
+    "expected_detect": "expected/human-armin-001.detect.md"
+  },
+  {
+    "id": "human-armin-002",
+    "fixture": "fixtures/human/armin-002-snapp-motor.md",
+    "genre": [
+      "social"
+    ],
+    "expected_rules": [],
+    "safeguards": [],
+    "preserve_tokens": [
+      "اسنپ موتور",
+      "پشمام میریزه"
+    ],
+    "notes": "Contributor-provided human benchmark. Expected findings: none. Preserve humor, exaggeration, fragments, and colloquial rhythm.",
+    "expected_detect": "expected/human-armin-002.detect.md"
+  },
+  {
+    "id": "human-armin-003",
+    "fixture": "fixtures/human/armin-003-smote.md",
+    "genre": [
+      "technical",
+      "social"
+    ],
+    "expected_rules": [],
+    "safeguards": [
+      "T02"
+    ],
+    "preserve_tokens": [
+      "SMOTE",
+      "سگ و گربه",
+      "پاک بشههه"
+    ],
+    "notes": "Contributor-provided human benchmark. Expected findings: none. Preserve analogy, code-switching, informal spelling, and deliberate exaggeration.",
+    "expected_detect": "expected/human-armin-003.detect.md"
+  },
+  {
+    "id": "human-armin-004",
+    "fixture": "fixtures/human/armin-004-message-anxiety.md",
+    "genre": [
+      "social",
+      "personal"
+    ],
+    "expected_rules": [],
+    "safeguards": [],
+    "preserve_tokens": [
+      "احساس مزاحمت میکنم",
+      "حوصله‌‌ سر بره",
+      "هیچکس"
+    ],
+    "notes": "Contributor-provided human benchmark. Expected findings: none. Preserve direct personal advice and broad conversational claims as voice, not portability filler.",
+    "expected_detect": "expected/human-armin-004.detect.md"
+  },
+  {
+    "id": "human-armin-005",
+    "fixture": "fixtures/human/armin-005-amdahl.md",
+    "genre": [
+      "technical",
+      "analytical"
+    ],
+    "expected_rules": [],
+    "safeguards": [
+      "T01",
+      "T02"
+    ],
+    "preserve_tokens": [
+      "آمدال",
+      "پردازنده‌ها",
+      "اصل بازی الگوریتمه"
+    ],
+    "notes": "Contributor-provided human benchmark. Expected findings: none. Preserve colloquial explanation and repeated technical terms when they carry the mechanism.",
+    "expected_detect": "expected/human-armin-005.detect.md"
+  },
+  {
+    "id": "human-armin-006",
+    "fixture": "fixtures/human/armin-006-typescript-go.md",
+    "genre": [
+      "technical",
+      "social"
+    ],
+    "expected_rules": [],
+    "safeguards": [
+      "T02",
+      "T03"
+    ],
+    "preserve_tokens": [
+      "تایپ‌اسکریپت",
+      "Go",
+      "C#",
+      "۱۰ برابر",
+      ":)"
+    ],
+    "notes": "Contributor-provided human benchmark. Expected findings: none. Preserve first-person technical opinion, code-switching, parentheticals, and emoticon.",
+    "expected_detect": "expected/human-armin-006.detect.md"
   }
 ]
