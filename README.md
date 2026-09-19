@@ -86,7 +86,7 @@ The first regression corpus includes five long-form AI-generated Persian drafts,
 - SaaS marketing copy;
 - balanced argumentative essay.
 
-Fixtures are editing samples, not factual reference material. Their claims are intentionally preserved during style tests unless a separate verification task is performed.
+Fixtures are editing samples, not factual reference material. Their claims are intentionally preserved during style tests unless a separate verification task is performed. The human corpus uses short attributed excerpts stored directly in `tests/fixtures/human/` to catch false positives without adding fetch scripts or runtime dependencies.
 
 ## Upstream
 

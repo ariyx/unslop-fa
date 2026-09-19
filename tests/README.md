@@ -42,3 +42,9 @@ Add a regression case when one of these happens:
 4. a genre-specific pattern needs behavior different from the core rule.
 
 Prefer a small reproducible case over adding a broad new blacklist rule.
+
+## Human benchmarks
+
+Human false-positive fixtures live directly in `fixtures/human/`. Third-party excerpts must be short, attributed, and include the original URL and publication date in front matter. Do not copy full articles into the repository.
+
+The primary failure condition is over-editing: distinctive human prose should not be normalized merely because it contains a pattern that also appears in generated text.

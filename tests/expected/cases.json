@@ -167,5 +167,51 @@
       "نیاز واقعی مشتری"
     ],
     "notes": "Flag repeated English-style em-dash punctuation, not the character by itself. Prefer Persian punctuation only where it improves naturalness without changing emphasis."
+  },
+  {
+    "id": "human-jadi-001",
+    "fixture": "fixtures/human/jadi-001-python.md",
+    "genre": [
+      "technical",
+      "educational"
+    ],
+    "expected_rules": [],
+    "safeguards": [
+      "T01",
+      "T02"
+    ],
+    "preserve_tokens": [
+      "پایتون",
+      "راهنمای کلی برای همه نداریم"
+    ],
+    "notes": "Human false-positive benchmark. Preserve conversational cadence, repetition used for emphasis, and informal spelling unless the user explicitly asks for copyediting."
+  },
+  {
+    "id": "human-jadi-002",
+    "fixture": "fixtures/human/jadi-002-macbook.md",
+    "genre": [
+      "social"
+    ],
+    "expected_rules": [],
+    "safeguards": [],
+    "preserve_tokens": [
+      "از اون سفیدهای بانمک",
+      "گنو/بی اس دی"
+    ],
+    "notes": "Human false-positive benchmark. Do not flatten idiosyncratic voice, sentence fragments, or personal asides into formal prose."
+  },
+  {
+    "id": "human-jadi-003",
+    "fixture": "fixtures/human/jadi-003-alopeyk.md",
+    "genre": [
+      "social"
+    ],
+    "expected_rules": [],
+    "safeguards": [],
+    "preserve_tokens": [
+      "یوسف آباد",
+      "۴ دقیقه"
+    ],
+    "notes": "Human false-positive benchmark. Narrative sequencing and colloquial repetition are intentional style, not slop by default."
   }
 ]
