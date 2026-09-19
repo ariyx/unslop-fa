@@ -121,7 +121,9 @@
       "deadline",
       "هوش مصنوعی"
     ],
-    "notes": "Prefer observable product behavior over abstract benefits. Do not invent metrics or capabilities."
+    "notes": "Prefer observable product behavior over abstract benefits. Do not invent metrics or capabilities.",
+    "expected_detect": "expected/marketing-001.detect.md",
+    "expected_edit": "expected/marketing-001.edit.md"
   },
   {
     "id": "argumentative-001",
