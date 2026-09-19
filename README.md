@@ -27,17 +27,19 @@ Unslop FA is designed to avoid both failures.
 
 ## Install
 
-The skill lives in [`skills/unslop-fa/`](skills/unslop-fa/).
+The easiest way to install the skill is to paste this into Codex or another agent that can install skills from GitHub:
 
-If your AI agent supports repository-based skills, install or load the `unslop-fa` skill from this repository.
-
-With a compatible skills CLI, the pattern is:
-
-```bash
-npx skills add <repository-url> --skill unslop-fa --global --yes
+```text
+Install the unslop-fa skill globally from https://github.com/ariyx/unslop-fa
 ```
 
-You can also copy `skills/unslop-fa/` into the skills directory used by your agent.
+You can also install it with a compatible skills CLI:
+
+```bash
+npx skills add ariyx/unslop-fa --skill unslop-fa --global --yes
+```
+
+Or copy [`skills/unslop-fa/`](skills/unslop-fa/) into the skills directory used by your agent.
 
 No runtime, API key, or Python package is required to use the skill itself.
 
@@ -45,26 +47,34 @@ No runtime, API key, or Python package is required to use the skill itself.
 
 ### Edit Persian writing
 
+In Codex:
+
 ```text
-/unslop-fa
+$unslop-fa
+
+متن شما...
+```
+
+Ask for a specific kind of edit when needed:
+
+```text
+$unslop-fa
+
+این متن رو طبیعی‌تر کن، ولی لحن و اصطلاحات فنی من رو حفظ کن:
 
 متن شما...
 ```
 
 The skill makes the minimum useful edits, preserves the original meaning and voice, and briefly explains the main changes.
 
-If your agent does not expose skills as slash commands, ask it directly:
-
-```text
-Use the unslop-fa skill to edit this Persian text while preserving my voice:
-
-متن شما...
-```
+Agents that expose skills as slash commands may use `/unslop-fa` instead.
 
 ### Detect slop without rewriting
 
 ```text
-/unslop-fa is this slop?
+$unslop-fa
+
+این متن رو فقط بررسی کن و الگوهای AI-like رو بگو. بازنویسی نکن:
 
 متن شما...
 ```
@@ -82,7 +92,7 @@ Examples include:
 1. **Semantic repetition** — repeating the same point in different wording without adding information.
 2. **Unnecessary restatement** — explaining a sentence again immediately after saying it clearly.
 3. **Canned transitions** — habitual connectors that make paragraph movement feel mechanical.
-4. **Rhetorical reframing** — repeated forms such as «سؤال این نیست که... بلکه...». 
+4. **Rhetorical reframing** — repeated forms such as «سؤال این نیست که... بلکه...».
 5. **Artificial symmetry** — overly balanced X/Y structures that read like a template.
 6. **Generic abstraction** — replacing concrete observations with broad claims about impact, value, or transformation.
 7. **Over-hedging** — unnecessary repetition of «می‌تواند»، «ممکن است»، «احتمالاً» and similar qualifiers.
