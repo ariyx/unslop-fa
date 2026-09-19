@@ -20,7 +20,7 @@ Fixtures are writing samples, not factual reference material. A style edit shoul
 - tokens or facts that must survive an edit unchanged;
 - notes about likely false positives.
 
-These are not exact-output golden files. Natural-language editing can have multiple valid rewrites.
+These are not exact-output golden files. Natural-language editing can have multiple valid rewrites. Human fixtures may also have an `expected_detect` baseline documenting patterns that look suspicious on the surface but must remain unflagged.
 
 ## Structural validation
 

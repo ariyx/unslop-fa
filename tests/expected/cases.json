@@ -186,7 +186,8 @@
       "خیلی خیلی زیاده",
       "از مسیر لذت ببرین"
     ],
-    "notes": "Full human false-positive benchmark. Expected findings: none. Preserve conversational cadence, instructional repetition, colloquial intensifiers, and informal spelling unless the user explicitly asks for copyediting."
+    "notes": "Full human false-positive benchmark. Expected findings: none. Preserve conversational cadence, instructional repetition, colloquial intensifiers, and informal spelling unless the user explicitly asks for copyediting.",
+    "expected_detect": "expected/human-jadi-001.detect.md"
   },
   {
     "id": "human-jadi-002",
@@ -205,7 +206,8 @@
       "شدیدا وابسته است به ماوس و گسچرهاش",
       "همین!"
     ],
-    "notes": "Full human false-positive benchmark. Expected findings: none. Preserve subjective review judgments, colloquial intensifiers, humor, fragments, rhetorical questions, and idiosyncratic phrasing unless the user explicitly asks for copyediting."
+    "notes": "Full human false-positive benchmark. Expected findings: none. Preserve subjective review judgments, colloquial intensifiers, humor, fragments, rhetorical questions, and idiosyncratic phrasing unless the user explicitly asks for copyediting.",
+    "expected_detect": "expected/human-jadi-002.detect.md"
   },
   {
     "id": "human-jadi-003",
@@ -222,6 +224,7 @@
       "انتظار می ره",
       "من مسوول مسیریابی نیستم"
     ],
-    "notes": "Full human false-positive benchmark. Expected findings: none. Preserve narrative repetition, complaint structure, repeated list framing, colloquial spelling, and personal judgments unless the user explicitly asks for copyediting."
+    "notes": "Full human false-positive benchmark. Expected findings: none. Preserve narrative repetition, complaint structure, repeated list framing, colloquial spelling, and personal judgments unless the user explicitly asks for copyediting.",
+    "expected_detect": "expected/human-jadi-003.detect.md"
   }
 ]
