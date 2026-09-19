@@ -2,23 +2,28 @@
 
 Persian anti-slop editing rules for agent-based writing tools.
 
-`unslop-fa` detects formulaic, generic, or model-like patterns in Persian prose and makes targeted edits while preserving meaning and voice.
+`unslop-fa` detects formulaic, generic, or model-like patterns in Persian prose and makes targeted edits while preserving meaning, uncertainty, technical precision, and the writer's voice.
 
-It does **not** claim to detect whether a text was written by AI. It flags observable writing patterns.
+It does **not** detect whether a text was written by AI. It flags observable writing patterns.
+
+## Status
+
+`v0.1` is a small rule set built from real Persian test cases across analytical, technical, social, marketing, and argumentative writing. The project intentionally grows from regression cases rather than from a large phrase blacklist.
 
 ## Goals
 
 - Preserve the writer's voice.
 - Make the minimum effective edit.
-- Detect Persian-specific formulaic prose, not just translated English patterns.
-- Keep claims, uncertainty, citations, and technical meaning intact.
-- Make behavior testable with small fixtures and regression cases.
+- Detect Persian-specific formulaic prose, not only translated English patterns.
+- Keep claims, uncertainty, citations, numbers, and technical meaning intact.
+- Adapt editing behavior to genre.
+- Make rule behavior inspectable and testable.
 
 ## Modes
 
 ### Detect
 
-Identify named slop patterns, quote the relevant passage, explain the issue briefly, and suggest a direction for revision. Do not rewrite the full text.
+Identify named patterns, quote the relevant passage, explain the contextual issue, and suggest a revision direction. Do not rewrite the full text or guess authorship.
 
 ### Edit
 
@@ -35,38 +40,59 @@ unslop-fa/
 ├── skills/
 │   └── unslop-fa/
 │       ├── SKILL.md
-│       └── eval.md
+│       ├── eval.md
+│       └── rules/
+│           ├── core.md
+│           ├── persian.md
+│           ├── analytical.md
+│           ├── argumentative.md
+│           ├── technical.md
+│           ├── social.md
+│           └── marketing.md
 └── tests/
-    └── fixtures/
-        ├── ai_like/
-        ├── human/
-        └── mixed/
+    ├── README.md
+    ├── fixtures/
+    │   ├── ai_like/
+    │   ├── human/
+    │   └── mixed/
+    └── expected/
 ```
 
-## Current scope
+## Design principles
 
-The first version focuses on Persian prose. It starts with a small rule set and grows only when a repeated pattern is supported by examples.
+### A pattern is not a verdict
 
-The project currently targets:
+A phrase is not slop by itself. Context determines whether it is redundant, formulaic, generic, or harmful to the writer's voice.
 
-- repetitive discourse connectors;
-- stacked hedging and modal verbs;
-- formulaic binary contrasts;
-- fake-profound endings;
-- bureaucratic and inflated phrasing;
-- vague attribution;
-- translated-English cadence;
-- excessive symmetry and list rhythm;
-- needless restatement in conclusions;
-- generic abstractions where concrete wording is available.
+### Preserve facts; remove predictability
 
-## Design rule
+The project is stricter about style than about content. Editing should never silently alter numbers, evidence, source attribution, technical scope, or uncertainty.
 
-A rule should not exist because a phrase "sounds AI." It should exist because the pattern is observable, repeated, and harmful to clarity or voice in context.
+### Genre matters
+
+An analytical article, technical comparison, LinkedIn post, and landing page fail in different ways. `unslop-fa` uses shared core rules plus genre-specific checks.
+
+### No Persian blacklist
+
+Words such as `بنابراین`, `در نهایت`, or `می‌تواند` are not banned. Repetition and context matter more than isolated vocabulary.
+
+## Seed corpus
+
+The first regression corpus includes five AI-generated Persian drafts:
+
+- analytical article;
+- technical database comparison;
+- professional social post;
+- SaaS marketing copy;
+- balanced argumentative essay.
+
+Fixtures are editing samples, not factual reference material. Their claims are intentionally preserved during style tests unless a separate verification task is performed.
 
 ## Upstream
 
-This project is inspired by and adapted from Peter Yang's `no-ai-slop` project. See `NOTICE.md` for attribution.
+This project is inspired by and partially adapted from Peter Yang's [`no-ai-slop`](https://github.com/petergyang/no-ai-slop), especially its detect/edit split, minimum-edit philosophy, named-pattern approach, and post-edit evaluation. Persian rules, genre handling, safeguards, examples, and regression cases are developed independently for Persian prose.
+
+See `NOTICE.md` for attribution.
 
 ## License
 

@@ -1,50 +1,91 @@
-# Unslop FA evaluation checks
+# Unslop FA evaluation
 
-Run these checks after an edit.
+Run this after every edit. Treat each item as pass/fail. If a meaningful check fails, revise the draft before returning it.
 
-## Meaning preservation
+For Detect mode, use the final section only.
 
-- Did any factual claim change?
-- Did any named entity, number, date, citation, or technical term change without a reason?
-- Did uncertainty become certainty, or certainty become uncertainty?
+## 1. Meaning and evidence
 
-Fail if yes.
+- Did every factual claim keep the same meaning?
+- Did numbers, dates, names, citations, units, versions, and quoted claims remain unchanged unless correction was explicitly requested?
+- Did certainty remain certainty and uncertainty remain uncertainty?
+- Were limitations on population, workload, scope, or evidence preserved?
+- Did the edit avoid inventing examples, mechanisms, data, or sources?
 
-## Voice preservation
+Fail if any answer is no.
 
-- Does the edited text still match the original level of formality?
-- Did distinctive phrasing get flattened merely for consistency?
-- Did the edit make formal prose conversational without being asked?
+## 2. Voice and register
 
-Fail if yes.
+- Does the result still sound like the same writer?
+- Is the original level of formality preserved unless a tone change was requested?
+- Were distinctive phrases left alone when they were clear and purposeful?
+- Did the edit avoid making every paragraph equally tidy or polished?
 
-## Minimality
+Fail if the draft has been flattened into generic polished prose.
 
-- Could the same improvement have been achieved with fewer changes?
-- Were strong sentences rewritten only because they were polished?
+## 3. Minimality
 
-Fail if yes.
+- Could any rewritten passage have been fixed with a smaller edit?
+- Were complete paragraphs rewritten just because one sentence triggered a rule?
+- Were useful examples, detours, or emphasis removed only for brevity?
 
-## Pattern check
+Fail if the editing is broader than the actual problem.
 
-- Are repetitive connectors still creating a mechanical rhythm?
-- Are hedges stacked unnecessarily?
-- Are binary contrasts repeated?
-- Does the ending turn into a slogan?
-- Are vague abstractions left where concrete wording exists in the source?
-- Are bureaucratic phrases used where direct verbs would be clearer?
+## 4. Core pattern check
 
-Fail if a clear avoidable pattern remains.
+- Is avoidable semantic repetition gone?
+- Are redundant restatements removed?
+- Are repeated binary contrasts and rhetorical reframes reduced?
+- Are generic abstractions replaced by supported specifics where available?
+- Are repeated canned transitions reduced without breaking logic?
+- Does the rhythm avoid mechanical symmetry and stacked punchlines?
+- Does the ending avoid a slogan or redundant recap unless the format requires one?
+- Are vague authority claims sourced or removed?
 
-## Natural Persian
+## 5. Natural Persian
 
-- Does the sentence order sound natural in Persian rather than translated from English?
-- Are نیم‌فاصله, punctuation, and Persian forms consistent enough for the source register?
+- Does word order sound natural in Persian rather than translated literally from English?
+- Are unnecessary noun chains and bureaucratic light-verb phrases reduced?
+- Are نیم‌فاصله and punctuation reasonably consistent with the source register?
+- Were English technical terms preserved when they are the clearer convention?
 
-Fail if the edit introduces awkward Persian.
+## 6. Genre checks
 
-## No authorship claim
+### Analytical / argumentative
 
-- Did the response claim or imply that AI definitely wrote the text?
+- Does the draft avoid grandiose framing unsupported by evidence?
+- Is balance proportional to the actual argument rather than mechanically symmetrical?
+- If the conclusion says «بستگی دارد», does it name the conditions that matter?
 
-Fail if yes.
+### Technical
+
+- Were caveats, terminology, scope, and benchmark conditions preserved?
+- Was technical repetition kept where consistency is useful?
+- Did stylistic cleanup avoid changing technical meaning?
+
+### Social
+
+- Are dramatic fragments, lesson stacks, and engagement questions used intentionally rather than mechanically?
+- Does personal reflection point to a concrete change or experience?
+
+### Marketing
+
+- Are abstract benefits backed by observable product behavior?
+- Are repeated value propositions merged?
+- Does the copy avoid unsupported universal-fit claims and generic triple-benefit slogans?
+
+## 7. Final read
+
+- Can a sharp Persian-speaking reader follow the piece without noticing an editing template?
+- Does each remaining generic sentence earn its place?
+- Does the draft end on the strongest supported point rather than a manufactured mic-drop line?
+
+## Detect-mode checks
+
+For a Detect request:
+
+- Did the response name only patterns actually present?
+- Did each finding quote a specific passage?
+- Did it explain the contextual problem rather than saying a phrase is "AI" by itself?
+- Did it avoid rewriting the full draft?
+- Did it avoid scores, AI probabilities, and authorship claims?

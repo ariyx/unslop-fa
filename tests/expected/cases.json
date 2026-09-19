@@ -1,0 +1,47 @@
+[
+  {
+    "id": "analytical-001",
+    "fixture": "fixtures/ai_like/seed/analytical-001.md",
+    "genre": ["analytical", "technical"],
+    "expected_rules": ["A01", "A02", "C03", "C04", "C05", "C10", "C11", "P05"],
+    "safeguards": ["T01", "T02", "T03"],
+    "preserve_tokens": ["۸۴ درصد", "۵۱ درصد", "۴۶ درصد", "۳۳ درصد", "۱۹ درصد", "۱۵٫۸ درصد", "۲۶۷٬۷۰۰", "Stack Overflow", "METR"],
+    "notes": "Aggressive cleanup is acceptable only where rhetoric repeats; empirical caveats and source scope must remain."
+  },
+  {
+    "id": "technical-001",
+    "fixture": "fixtures/ai_like/seed/technical-001.md",
+    "genre": ["technical"],
+    "expected_rules": ["C03", "C05", "C10", "C11", "P05"],
+    "safeguards": ["T01", "T02", "T03", "T04", "T05", "T06"],
+    "preserve_tokens": ["PostgreSQL", "MySQL", "JSONB", "ACID", "InnoDB", "BigQuery", "Snowflake", "ClickHouse", "PostGIS"],
+    "notes": "Technical caveats that resemble generic disclaimers must not be removed when they change the meaning of the comparison."
+  },
+  {
+    "id": "social-001",
+    "fixture": "fixtures/ai_like/seed/social-001.md",
+    "genre": ["social"],
+    "expected_rules": ["C09", "C10", "S01", "S02", "S03", "S04", "S05", "S06"],
+    "safeguards": [],
+    "preserve_tokens": ["پیچیده کردن زودهنگام سیستم", "ارتباط ضعیف با مشتری"],
+    "notes": "Keep personal specificity. Remove only manufactured drama, stacked maxims, and redundant engagement devices."
+  },
+  {
+    "id": "marketing-001",
+    "fixture": "fixtures/ai_like/seed/marketing-001.md",
+    "genre": ["marketing"],
+    "expected_rules": ["C01", "C03", "M01", "M02", "M03", "M04", "M05", "M06", "M07"],
+    "safeguards": [],
+    "preserve_tokens": ["FlowTask", "task", "deadline", "هوش مصنوعی"],
+    "notes": "Prefer observable product behavior over abstract benefits. Do not invent metrics or capabilities."
+  },
+  {
+    "id": "argumentative-001",
+    "fixture": "fixtures/ai_like/seed/argumentative-001.md",
+    "genre": ["argumentative"],
+    "expected_rules": ["C03", "C04", "C05", "C11", "G01", "G02", "G03", "G04"],
+    "safeguards": [],
+    "preserve_tokens": ["ساختمان داده", "الگوریتم", "سیستم‌عامل", "Git", "GitHub", "tutorial hell"],
+    "notes": "Preserve genuine tradeoffs while reducing mechanical symmetry and generic compromise language."
+  }
+]
