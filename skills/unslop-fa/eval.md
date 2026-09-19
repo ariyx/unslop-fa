@@ -8,6 +8,8 @@ For Detect mode, use the final section only.
 
 - Did every factual claim keep the same meaning?
 - Did numbers, dates, names, citations, units, versions, and quoted claims remain unchanged unless correction was explicitly requested?
+- Were quotations, pasted comments, correspondence, interview answers, and other attributed passages kept separate from the surrounding author's voice?
+- Did the edit avoid rewriting attributed material unless the user explicitly asked for it?
 - Did certainty remain certainty and uncertainty remain uncertainty?
 - Were limitations on population, workload, scope, or evidence preserved?
 - Did the edit avoid inventing examples, mechanisms, data, or sources?

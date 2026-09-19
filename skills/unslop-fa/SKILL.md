@@ -61,6 +61,12 @@ Fix the pattern, not the whole paragraph. Leave strong sentences alone.
 
 Do not change a number, date, source, proper noun, technical term, quoted claim, scope, or degree of certainty merely to improve style.
 
+### Preserve quoted and embedded voices
+
+Treat quotations, pasted comments, correspondence, interview answers, cited examples, and other clearly attributed passages as protected voice boundaries. Do not use their style as evidence about the surrounding author's voice, and do not rewrite them unless the user explicitly asks to edit the quoted material itself.
+
+When a draft alternates between the author's prose and another person's words, evaluate each voice in its own context. A formulaic-looking phrase inside an attributed passage is not, by itself, a finding against the surrounding prose.
+
 ### Concrete beats generic
 
 When the source already contains a mechanism, example, number, consequence, or observable behavior, prefer it over a broad statement about importance, impact, efficiency, or transformation.

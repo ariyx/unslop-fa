@@ -256,6 +256,23 @@
     "expected_detect": "expected/human-vahid-001.detect.md"
   },
   {
+    "id": "human-shabanali-001",
+    "fixture": "fixtures/human/shabanali-001-embedded-voice.md",
+    "genre": [
+      "analytical",
+      "personal"
+    ],
+    "expected_rules": [],
+    "safeguards": [],
+    "preserve_tokens": [
+      "این حرف‌های علی بود",
+      "تم یادگیری",
+      "نامه نگاری یا گفتگوی دوستانه"
+    ],
+    "notes": "Human false-positive benchmark for quoted/embedded voice boundaries. Expected findings: none. Do not attribute the quoted comment style to the surrounding author or rewrite attributed material by default.",
+    "expected_detect": "expected/human-shabanali-001.detect.md"
+  },
+  {
     "id": "mixed-technical-001",
     "fixture": "fixtures/mixed/01-technical.md",
     "genre": [
