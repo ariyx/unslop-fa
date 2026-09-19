@@ -93,7 +93,9 @@
       "پیچیده کردن زودهنگام سیستم",
       "ارتباط ضعیف با مشتری"
     ],
-    "notes": "Keep personal specificity. Remove only manufactured drama, stacked maxims, and redundant engagement devices."
+    "notes": "Keep personal specificity. Remove only manufactured drama, stacked maxims, and redundant engagement devices.",
+    "expected_detect": "expected/social-001.detect.md",
+    "expected_edit": "expected/social-001.edit.md"
   },
   {
     "id": "marketing-001",
