@@ -226,5 +226,81 @@
     ],
     "notes": "Full human false-positive benchmark. Expected findings: none. Preserve narrative repetition, complaint structure, repeated list framing, colloquial spelling, and personal judgments unless the user explicitly asks for copyediting.",
     "expected_detect": "expected/human-jadi-003.detect.md"
+  },
+  {
+    "id": "mixed-technical-001",
+    "fixture": "fixtures/mixed/01-technical.md",
+    "genre": [
+      "technical"
+    ],
+    "expected_rules": [
+      "C03",
+      "P06"
+    ],
+    "safeguards": [
+      "T01",
+      "T02",
+      "T04"
+    ],
+    "preserve_tokens": [
+      "PostgreSQL",
+      "EXPLAIN ANALYZE",
+      "user_id",
+      "created_at",
+      "composite index",
+      "read به write"
+    ],
+    "notes": "Mixed case: flag only the generic middle paragraph. Preserve concrete technical constraints before and after it.",
+    "expected_detect": "expected/mixed-technical-001.detect.md",
+    "expected_edit": "expected/mixed-technical-001.edit.md"
+  },
+  {
+    "id": "mixed-analytical-001",
+    "fixture": "fixtures/mixed/02-analytical.md",
+    "genre": [
+      "analytical"
+    ],
+    "expected_rules": [
+      "A02",
+      "C03",
+      "C05",
+      "C08"
+    ],
+    "safeguards": [],
+    "preserve_tokens": [
+      "۱۲ نفره",
+      "۳۰ دقیقه",
+      "۱۵ دقیقه",
+      "دو هفته",
+      "پیام‌رسان"
+    ],
+    "notes": "Mixed case: preserve the concrete observation and mechanism; flag only the formulaic interpretive bridge.",
+    "expected_detect": "expected/mixed-analytical-001.detect.md",
+    "expected_edit": "expected/mixed-analytical-001.edit.md"
+  },
+  {
+    "id": "mixed-social-001",
+    "fixture": "fixtures/mixed/03-social.md",
+    "genre": [
+      "social",
+      "technical"
+    ],
+    "expected_rules": [
+      "S02",
+      "S03",
+      "S05"
+    ],
+    "safeguards": [
+      "T02"
+    ],
+    "preserve_tokens": [
+      "CI",
+      "timezone",
+      "دو ساعت",
+      "regression suite"
+    ],
+    "notes": "Mixed case: keep the concrete debugging story and corrective action; remove only social-post scaffolding.",
+    "expected_detect": "expected/mixed-social-001.detect.md",
+    "expected_edit": "expected/mixed-social-001.edit.md"
   }
 ]
