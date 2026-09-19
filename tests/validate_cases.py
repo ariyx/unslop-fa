@@ -44,16 +44,26 @@ def main() -> int:
                 if rule_id not in rule_ids:
                     errors.append(f"{case_id}: unknown rule id {rule_id} in {key}")
 
-        for token in case.get("preserve_tokens", []):
+        preserve_tokens = case.get("preserve_tokens", [])
+        for token in preserve_tokens:
             if token not in text:
-                errors.append(f"{case_id}: preserve token not found: {token!r}")
+                errors.append(f"{case_id}: preserve token not found in fixture: {token!r}")
 
+        expected_paths: dict[str, Path] = {}
         for key in ("expected_detect", "expected_edit"):
             rel = case.get(key)
             if rel:
                 expected_path = ROOT / "tests" / rel
+                expected_paths[key] = expected_path
                 if not expected_path.is_file():
                     errors.append(f"{case_id}: missing {key} file {expected_path}")
+
+        edit_path = expected_paths.get("expected_edit")
+        if edit_path and edit_path.is_file():
+            edit_text = edit_path.read_text(encoding="utf-8")
+            for token in preserve_tokens:
+                if token not in edit_text:
+                    errors.append(f"{case_id}: preserve token missing from expected edit: {token!r}")
 
     if errors:
         print("FAIL")

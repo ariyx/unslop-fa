@@ -68,7 +68,9 @@
       "ClickHouse",
       "PostGIS"
     ],
-    "notes": "Technical caveats that resemble generic disclaimers must not be removed when they change the meaning of the comparison."
+    "notes": "Technical caveats that resemble generic disclaimers must not be removed when they change the meaning of the comparison.",
+    "expected_detect": "expected/technical-001.detect.md",
+    "expected_edit": "expected/technical-001.edit.md"
   },
   {
     "id": "social-001",
