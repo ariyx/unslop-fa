@@ -32,7 +32,9 @@
       "Stack Overflow",
       "METR"
     ],
-    "notes": "Aggressive cleanup is acceptable only where rhetoric repeats; empirical caveats and source scope must remain."
+    "notes": "Aggressive cleanup is acceptable only where rhetoric repeats; empirical caveats and source scope must remain.",
+    "expected_detect": "expected/analytical-001.detect.md",
+    "expected_edit": "expected/analytical-001.edit.md"
   },
   {
     "id": "technical-001",

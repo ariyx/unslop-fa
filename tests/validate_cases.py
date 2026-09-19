@@ -48,6 +48,13 @@ def main() -> int:
             if token not in text:
                 errors.append(f"{case_id}: preserve token not found: {token!r}")
 
+        for key in ("expected_detect", "expected_edit"):
+            rel = case.get(key)
+            if rel:
+                expected_path = ROOT / "tests" / rel
+                if not expected_path.is_file():
+                    errors.append(f"{case_id}: missing {key} file {expected_path}")
+
     if errors:
         print("FAIL")
         for error in errors:
