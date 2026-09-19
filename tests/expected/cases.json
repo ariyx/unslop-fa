@@ -150,7 +150,9 @@
       "GitHub",
       "tutorial hell"
     ],
-    "notes": "Preserve genuine tradeoffs while reducing mechanical symmetry and generic compromise language."
+    "notes": "Preserve genuine tradeoffs while reducing mechanical symmetry and generic compromise language.",
+    "expected_detect": "expected/argumentative-001.detect.md",
+    "expected_edit": "expected/argumentative-001.edit.md"
   },
   {
     "id": "persian-em-dash-001",
