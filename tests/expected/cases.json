@@ -182,23 +182,30 @@
     ],
     "preserve_tokens": [
       "پایتون",
-      "راهنمای کلی برای همه نداریم"
+      "راهنمای کلی برای همه نداریم",
+      "خیلی خیلی زیاده",
+      "از مسیر لذت ببرین"
     ],
-    "notes": "Human false-positive benchmark. Preserve conversational cadence, repetition used for emphasis, and informal spelling unless the user explicitly asks for copyediting."
+    "notes": "Full human false-positive benchmark. Expected findings: none. Preserve conversational cadence, instructional repetition, colloquial intensifiers, and informal spelling unless the user explicitly asks for copyediting."
   },
   {
     "id": "human-jadi-002",
     "fixture": "fixtures/human/jadi-002-macbook.md",
     "genre": [
-      "social"
+      "social",
+      "personal-review"
     ],
     "expected_rules": [],
     "safeguards": [],
     "preserve_tokens": [
       "از اون سفیدهای بانمک",
-      "گنو/بی اس دی"
+      "گنو/بی اس دی",
+      "کیفیت سخت افزار بسیار خوب به نظر می رسه",
+      "عمر باتری بسیار خوبه",
+      "شدیدا وابسته است به ماوس و گسچرهاش",
+      "همین!"
     ],
-    "notes": "Human false-positive benchmark. Do not flatten idiosyncratic voice, sentence fragments, or personal asides into formal prose."
+    "notes": "Full human false-positive benchmark. Expected findings: none. Preserve subjective review judgments, colloquial intensifiers, humor, fragments, rhetorical questions, and idiosyncratic phrasing unless the user explicitly asks for copyediting."
   },
   {
     "id": "human-jadi-003",
@@ -210,8 +217,11 @@
     "safeguards": [],
     "preserve_tokens": [
       "یوسف آباد",
-      "۴ دقیقه"
+      "۴ دقیقه",
+      "صبر کردیم و صبر کردیم",
+      "انتظار می ره",
+      "من مسوول مسیریابی نیستم"
     ],
-    "notes": "Human false-positive benchmark. Narrative sequencing and colloquial repetition are intentional style, not slop by default."
+    "notes": "Full human false-positive benchmark. Expected findings: none. Preserve narrative repetition, complaint structure, repeated list framing, colloquial spelling, and personal judgments unless the user explicitly asks for copyediting."
   }
 ]

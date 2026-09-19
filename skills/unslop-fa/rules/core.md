@@ -8,7 +8,7 @@ Each rule has four parts: **Detect**, **Do not flag**, **Rewrite**, and **Exampl
 
 **Detect:** Two or more nearby sentences or sections communicate the same idea with different wording but add no new fact, example, qualification, or consequence.
 
-**Do not flag:** Deliberate repetition used for contrast, instruction, or emphasis when the repetition changes the reader's understanding.
+**Do not flag:** Deliberate repetition used for contrast, instruction, emphasis, or narrative callback when each recurrence changes the reader's understanding, advances chronology, or marks a meaningful before/after.
 
 **Rewrite:** Keep the strongest formulation. Merge the rest or replace repetition with a concrete detail.
 
@@ -62,7 +62,7 @@ After: «وظایف، فایل‌ها و وضعیت پروژه در یک فضا�
 
 **Detect:** A sentence could be moved unchanged to many unrelated people, companies, products, or topics.
 
-**Do not flag:** Necessary framing or definitions that are generic by nature.
+**Do not flag:** Necessary framing or definitions that are generic by nature. In personal or educational prose, do not flag a broad sentence merely because it could apply elsewhere when it is clearly part of the writer's established voice, motivation, or teaching rhythm.
 
 **Rewrite:** Cut it or make it specific using facts already in the draft. Never invent specificity.
 
@@ -72,7 +72,7 @@ After: «وظایف، فایل‌ها و وضعیت پروژه در یک فضا�
 
 Examples include «این نکته بسیار مهم است»، «این تفاوت اهمیت زیادی دارد»، or repeated «نکته اصلی این است».
 
-**Do not flag:** Signposting needed in long technical or legal prose.
+**Do not flag:** Signposting needed in long technical or legal prose, or a first-person judgment in a review or personal piece where the evaluation itself is part of the writer's voice.
 
 **Rewrite:** Delete the label or replace it with the evidence or consequence.
 
@@ -80,7 +80,7 @@ Examples include «این نکته بسیار مهم است»، «این تفا�
 
 **Detect:** Repeated sentence lengths, repeated paragraph templates, stacked short punchlines, or a sequence that sounds mechanically balanced.
 
-**Do not flag:** Deliberate rhythm that is clearly part of the writer's voice.
+**Do not flag:** Deliberate rhythm that is clearly part of the writer's voice, including colloquial repetition, uneven sentence lengths, and isolated fragments in personal prose.
 
 **Rewrite:** Change only enough sentence shape to restore natural cadence. Do not make every sentence the same length in the opposite direction.
 

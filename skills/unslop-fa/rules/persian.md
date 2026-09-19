@@ -14,7 +14,7 @@ These rules target patterns that are especially common in generated, translated,
 
 **Detect:** Grammatically acceptable Persian whose word order, pronouns, rhetorical structure, or clause chaining closely mirrors English and feels unnatural in Persian.
 
-**Do not flag:** Technical prose that necessarily follows source terminology or parallel documentation.
+**Do not flag:** Technical prose that necessarily follows source terminology or parallel documentation. Also do not treat colloquial Persian, dialectal wording, informal spelling, or an idiosyncratic personal voice as translationese merely because it differs from formal written Persian.
 
 **Rewrite:** Reorder information for natural Persian. Preserve technical terms and scope.
 
@@ -54,7 +54,7 @@ These rules target patterns that are especially common in generated, translated,
 
 **Detect:** Repeated «بسیار»، «به‌شدت»، «قابل‌توجه»، «چشمگیر»، «ویژه»، «کلیدی» when no scale or reason is given.
 
-**Do not flag:** A supported comparison or measured magnitude.
+**Do not flag:** A supported comparison or measured magnitude. Also preserve colloquial intensification such as repeated «خیلی» or «واقعا», and first-person evaluative intensifiers in reviews or personal prose, when they express the writer’s stance rather than generic promotional emphasis.
 
 **Rewrite:** Remove the intensifier or replace it with the evidence already present.
 

@@ -71,6 +71,10 @@ Never invent specificity that is not in the draft.
 
 No Persian word is banned merely because models often use it. «بنابراین»، «در نهایت»، «می‌تواند»، and similar words may be correct. Flag them only when their use is habitual, redundant, or structurally formulaic.
 
+### When uncertain, preserve
+
+A possible pattern is not enough to justify an edit. If the same feature plausibly comes from personal voice, narrative timing, colloquial Persian, technical precision, or deliberate emphasis, leave it alone unless the surrounding text makes the formulaic pattern clear.
+
 ### Do not casualize by default
 
 Formal Persian can be natural. Academic, technical, legal, and professional prose may need formality.

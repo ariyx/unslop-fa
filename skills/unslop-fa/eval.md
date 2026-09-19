@@ -19,6 +19,7 @@ Fail if any answer is no.
 - Does the result still sound like the same writer?
 - Is the original level of formality preserved unless a tone change was requested?
 - Were distinctive phrases left alone when they were clear and purposeful?
+- Were colloquial wording, narrative callbacks, first-person judgments, and uneven cadence preserved when they were part of the writer's voice?
 - Did the edit avoid making every paragraph equally tidy or polished?
 
 Fail if the draft has been flattened into generic polished prose.

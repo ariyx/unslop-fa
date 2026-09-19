@@ -45,6 +45,6 @@ Prefer a small reproducible case over adding a broad new blacklist rule.
 
 ## Human benchmarks
 
-Human false-positive fixtures live directly in `fixtures/human/`. Third-party excerpts must be short, attributed, and include the original URL and publication date in front matter. Do not copy full articles into the repository.
+Human false-positive fixtures live directly in `fixtures/human/`. Every fixture should include source, URL, publication date, and provenance in front matter. Full third-party texts should only be committed when the contributor has the right or permission to redistribute them; otherwise use a short attributed excerpt.
 
 The primary failure condition is over-editing: distinctive human prose should not be normalized merely because it contains a pattern that also appears in generated text.
