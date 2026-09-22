@@ -1,130 +1,90 @@
 # Unslop FA
 
-Detect and reduce formulaic AI-like patterns in Persian writing without flattening the writer's voice.
+Unslop FA is an agent skill for detecting and editing formulaic AI-like patterns in Persian prose while preserving the writer's meaning, uncertainty, technical precision, and voice.
 
-`unslop-fa` is an agent skill for Persian prose. It does **not** try to guess whether a text was written by AI. Instead, it looks for observable writing patterns that often make Persian text feel generated, over-polished, repetitive, translated, or generic.
+It does not determine whether a person or an AI wrote a text. It identifies observable patterns that can make Persian writing feel repetitive, generic, translated, over-polished, or mechanically structured, and it makes conservative edits only when the context supports them.
 
-## Problem
+## What it does
 
-AI can produce clean Persian that still sounds strangely predictable.
+The skill supports two modes:
 
-Common examples include:
+- **Detect** — identify contextual patterns, quote the smallest useful passage, explain the problem, and suggest a revision direction without rewriting the draft.
+- **Edit** — make the minimum effective changes, preserve facts and voice, and briefly summarize the main interventions.
 
-- «سؤال اصلی این نیست که X، بلکه این است که Y.»
-- «در دنیای امروز...»
-- «این فقط X نیست، بلکه Y است.»
-- repeated `بنابراین` / `در نهایت` / `از این منظر` transitions;
-- perfectly balanced arguments that read like a template;
-- generic conclusions and quote-ready endings;
-- marketing copy built from abstract benefits instead of concrete behavior;
-- LinkedIn-style dramatic fragments and lesson stacks;
-- translation-like Persian and unnecessary administrative phrasing;
-- excessive use of the em dash (`—`) where normal Persian punctuation would read more naturally.
+The rule set covers general Persian prose and genre-specific checks for analytical, argumentative, technical, social, and marketing writing. It is deliberately conservative about colloquial language, humor, deliberate repetition, quotations, embedded voices, technical terminology, caveats, numbers, dates, citations, and uncertainty.
 
-The opposite problem also matters: an editor can remove the writer's humor, bluntness, irregular rhythm, colloquial Persian, technical caveats, or deliberate repetition while trying to make the text "better."
+## Requirements
 
-Unslop FA is designed to avoid both failures.
+To use the skill:
 
-## Install
+- an agent that supports installing and invoking skills;
+- Node.js and `npx` only if you use the Skills CLI installation method below.
 
-The easiest way to install the skill is to paste this into Codex or another agent that can install skills from GitHub:
+To work on the repository or run its checks:
+
+- Python 3. The validator uses only the standard library and does not call an LLM or require an API key.
+
+There is no application runtime, package manager project, service, database, or environment-variable configuration in this repository.
+
+## Installation
+
+### Skills CLI
+
+If Node.js is available, install the skill with a compatible Skills CLI:
+
+```text
+npx skills add ariyx/unslop-fa --skill unslop-fa --global --yes
+```
+
+### Agent-assisted installation
+
+In Codex or another agent that can install skills from GitHub, ask it to install:
 
 ```text
 Install the unslop-fa skill globally from https://github.com/ariyx/unslop-fa
 ```
 
-You can also install it with a compatible skills CLI:
+### Manual installation
 
-```bash
-npx skills add ariyx/unslop-fa --skill unslop-fa --global --yes
-```
+Copy [`skills/unslop-fa/`](skills/unslop-fa/) into the skills directory used by your agent. The directory must contain `SKILL.md`, `eval.md`, and the `rules/` files together.
 
-Or copy [`skills/unslop-fa/`](skills/unslop-fa/) into the skills directory used by your agent.
+The skill itself has no runtime dependencies, package dependencies, API keys, or required `.env` file.
 
-No runtime, API key, or Python package is required to use the skill itself.
+## Usage
 
-## Use
+After installation, invoke the skill using the syntax supported by your agent. Codex users can use `$unslop-fa`; agents that expose skills as slash commands may use `/unslop-fa`.
 
 ### Edit Persian writing
 
-In Codex:
+```text
+$unslop-fa
+
+این متن را طبیعی‌تر کن، ولی لحن و اصطلاحات فنی من را حفظ کن:
+
+[متن شما]
+```
+
+Ask for a narrower edit when appropriate, such as preserving a formal register or changing only a repetitive transition.
+
+### Detect patterns without rewriting
 
 ```text
 $unslop-fa
 
-متن شما...
+این متن را فقط بررسی کن و الگوهای AI-like را بگو. بازنویسی نکن:
+
+[متن شما]
 ```
 
-Ask for a specific kind of edit when needed:
+Detect mode reports only patterns that are present in context. It does not assign an AI score, estimate authorship, or rewrite the full draft.
 
-```text
-$unslop-fa
+## How the skill works
 
-این متن رو طبیعی‌تر کن، ولی لحن و اصطلاحات فنی من رو حفظ کن:
-
-متن شما...
-```
-
-The skill makes the minimum useful edits, preserves the original meaning and voice, and briefly explains the main changes.
-
-Agents that expose skills as slash commands may use `/unslop-fa` instead.
-
-### Detect slop without rewriting
-
-```text
-$unslop-fa
-
-این متن رو فقط بررسی کن و الگوهای AI-like رو بگو. بازنویسی نکن:
-
-متن شما...
-```
-
-Detect mode names the relevant patterns, quotes the smallest useful passage, explains why the pattern is a problem **in that context**, and suggests a revision direction.
-
-It does not assign an "AI probability" or claim to know who wrote the text.
-
-## What it catches
-
-Unslop FA currently covers core Persian patterns plus genre-specific patterns for analytical, argumentative, technical, social, and marketing writing.
-
-Examples include:
-
-1. **Semantic repetition** — repeating the same point in different wording without adding information.
-2. **Unnecessary restatement** — explaining a sentence again immediately after saying it clearly.
-3. **Canned transitions** — habitual connectors that make paragraph movement feel mechanical.
-4. **Rhetorical reframing** — repeated forms such as «سؤال این نیست که... بلکه...».
-5. **Artificial symmetry** — overly balanced X/Y structures that read like a template.
-6. **Generic abstraction** — replacing concrete observations with broad claims about impact, value, or transformation.
-7. **Over-hedging** — unnecessary repetition of «می‌تواند»، «ممکن است»، «احتمالاً» and similar qualifiers.
-8. **Translation-like Persian** — structures that are grammatical but feel copied from English cadence.
-9. **Administrative Persian** — needless phrases such as «لازم به ذکر است» or «نقش بسزایی ایفا می‌کند» when simpler Persian says the same thing.
-10. **Em dash overuse** — repeated English-style use of `—` where `،`, `:`, parentheses, or a sentence break fits better.
-11. **Social-media slop** — dramatic fragments, lesson stacks, manufactured revelations, and engagement-bait endings.
-12. **Marketing slop** — triple-benefit headlines, abstract benefit language, universal-fit claims, and repeated value propositions.
-
-Patterns are contextual. A word or structure is not automatically bad just because AI systems often use it.
-
-## What it preserves
-
-Unslop FA is intentionally conservative about good writing.
-
-It protects:
-
-- the writer's vocabulary, humor, bluntness, and cadence;
-- colloquial and intentionally imperfect Persian;
-- facts, dates, numbers, citations, and proper nouns;
-- uncertainty and the original scope of claims;
-- technical terminology and necessary repetition;
-- quotations, interviews, pasted comments, correspondence, and other embedded voices;
-- useful caveats in technical and analytical writing.
-
-When a pattern could reasonably be part of the writer's voice, the default is to preserve it.
-
-## How it works
+The skill loads the core and Persian rules first, then adds genre-specific rules when the genre is clear. In edit mode, it applies the checks in [`skills/unslop-fa/eval.md`](skills/unslop-fa/eval.md) before returning the result.
 
 ```mermaid
 flowchart LR
-    A[Persian draft] --> B{Detect or Edit}
+    A[Persian draft] --> B{Detect or edit}
     B -->|Detect| C[Find contextual patterns]
     C --> D[Explain findings]
     B -->|Edit| E[Make minimum useful edits]
@@ -132,47 +92,44 @@ flowchart LR
     F --> G[Run post-edit checks]
 ```
 
-The skill always loads the core Persian rules first, then applies genre-specific rules when the genre is clear.
+The rules are contextual rather than a blacklist. For example, a connector such as `بنابراین` or a technical term may be entirely appropriate once, but distracting when repeated mechanically.
 
-For editing, it runs the checks in [`eval.md`](skills/unslop-fa/eval.md) before returning the result.
+## Repository layout
 
-## What's inside
+- [`skills/unslop-fa/SKILL.md`](skills/unslop-fa/SKILL.md) — modes, safeguards, rule-loading behavior, and editing workflow.
+- [`skills/unslop-fa/eval.md`](skills/unslop-fa/eval.md) — post-edit evaluation checks.
+- [`skills/unslop-fa/rules/`](skills/unslop-fa/rules/) — core, Persian, genre, and technical safeguards.
+- [`tests/fixtures/`](tests/fixtures/) — AI-like, human, and mixed regression fixtures.
+- [`tests/expected/`](tests/expected/) — expected findings, edits, and case metadata.
+- [`tests/validate_cases.py`](tests/validate_cases.py) — dependency-free structural validator.
+- [`CONTRIBUTING.md`](CONTRIBUTING.md) — guidance for rules, fixtures, and pull requests.
 
-- [`SKILL.md`](skills/unslop-fa/SKILL.md) — behavior, modes, safeguards, and editing workflow.
-- [`eval.md`](skills/unslop-fa/eval.md) — post-edit checks.
-- [`rules/`](skills/unslop-fa/rules/) — core, Persian, analytical, argumentative, technical, social, and marketing rules.
-- [`tests/fixtures/`](tests/fixtures/) — AI-like, human, and mixed regression cases.
-- [`tests/expected/`](tests/expected/) — expected detect/edit behavior.
-- [`tests/validate_cases.py`](tests/validate_cases.py) — structural test validator.
+## Development and testing
 
-## Testing
+Clone the repository, make changes to the skill or its regression corpus, and run:
 
-The project is developed from regression cases rather than a blacklist of suspicious words.
-
-```bash
+```text
 python tests/validate_cases.py
 ```
 
-The validator checks case integrity, rule IDs, expected outputs, and preservation constraints. It does not call an LLM and does not require an API key.
+If your system exposes Python 3 as `python3` or `py`, use that command in place of `python`.
 
-Human fixtures are especially important: they make sure new rules do not "fix" unusual but intentional human writing.
+The validator checks that fixtures exist, case metadata is valid, referenced rule IDs exist, expected files are present, and preservation tokens survive expected edits. Human fixtures protect against over-editing distinctive but intentional Persian prose.
+
+This repository currently has no formatter, linter, type checker, build script, package manifest, lockfile, or GitHub Actions workflow. The validation command above is the project’s available automated check.
 
 ## Contributing
 
-The most useful contribution is a real failure case.
+The most useful contribution is a small, reproducible failure case. If the skill misses a pattern or damages good Persian prose:
 
-If Unslop FA misses an obvious pattern or damages good Persian prose:
-
-1. add a minimal reproducible fixture;
-2. describe what should or should not change;
+1. add a minimal fixture;
+2. describe what should and should not change;
 3. update the smallest relevant rule;
 4. add or update the expected behavior;
-5. run `python tests/validate_cases.py`.
+5. run the validator.
 
-Avoid phrase blacklists. A useful rule should describe **when** a pattern becomes a problem and **when it should be preserved**.
-
-See [`CONTRIBUTING.md`](CONTRIBUTING.md) for details.
+Avoid universal banned-word rules. A useful rule explains when a pattern becomes a problem and when it should be preserved. See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the repository’s contribution guidance.
 
 ## License
 
-MIT. See [`LICENSE`](LICENSE) and [`NOTICE.md`](NOTICE.md).
+Unslop FA is available under the MIT License. See [`LICENSE`](LICENSE) and [`NOTICE.md`](NOTICE.md) for licensing and attribution details.
